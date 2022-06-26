@@ -1,0 +1,32 @@
+[
+    {
+        "userId": "1",
+        "firstName": "Akash",
+        "lastName": "Bhardwaj",
+        "userName": "akash@nagarro.com",
+        "phone": "9834125612",
+        "pwd": "abc123",
+        "role": "admin",
+        "isPrimeMember": true
+    },
+    {
+        "userId": "2",
+        "firstName": "Arun",
+        "lastName": "Goyal",
+        "userName": "arun@nagarro.com",
+        "phoneNumber": "9934125612",
+        "password": "abc123",
+        "role": "user",
+        "isPrimeMember": true
+    },
+    {
+        "userId": "3",
+        "firstName": "Ravi",
+        "lastName": "Garg",
+        "userName": "ravi@nagarro.com",
+        "phoneNumber": "8834125612",
+        "password": "abc123",
+        "role": "user",
+        "isPrimeMember": false
+    }
+]

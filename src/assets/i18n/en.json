@@ -1,0 +1,25 @@
+{
+  "HEADER": {
+    "TITLE": "Ecommerce-App",
+    "HOME": "Home",
+    "CART": "Cart",
+    "LANGUAGE": "Language",
+    "SELECT_ENGLISH": "English",
+    "SELECT_HINDI": "Hindi",
+    "SEARCH": "Search",
+    "SEARCH_PLACEHOLDER": "Search by name",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout"
+  },
+  "LOGIN": {
+    "HEADER": "LOG-IN",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "EMAIL_REQUIRED": "Please enter email",
+    "VALID_EMAIL": "Please enter valid email",
+    "PASSWORD_REQUIRED": "Please enter password",
+    "INVALID_CREDENTIAL_MESSAGE": "Invalid login credentials",
+    "LOGIN_BUTTON": "Log-in",
+    "REGISTER_BUTTON": "Sign-up"
+  }
+}
