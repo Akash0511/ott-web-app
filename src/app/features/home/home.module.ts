@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { HomeComponent } from './components/home/home.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { GenerateShowsComponent } from './components/generate-shows/generate-shows.component';
 import { ShowsDetailPageComponent } from './components/shows-detail-page/shows-detail-page.component';
@@ -25,6 +27,8 @@ const components = [
   imports: [
     CommonModule,
     HomeRoutingModule,
+    MatCardModule,
+    MatIconModule,
     NgxPaginationModule,
     TranslateModule
   ]

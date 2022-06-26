@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Show } from 'src/app/core/interfaces/show.model';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  shows: Show[] = [];
+  page = 1;
+  total!: number;
+
+  constructor(
+    private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.route.data.subscribe(data => {
+      this.shows = data['showsList'];
+    });
   }
 
 }

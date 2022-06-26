@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Show } from 'src/app/core/interfaces/show.model';
 
 @Component({
   selector: 'app-generate-shows',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenerateShowsComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  showInfo!: Show;
+
+  constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  viewShowDetail(showId: string): void {
+    this.router.navigateByUrl('/home/shows/' + showId);
   }
 
 }
