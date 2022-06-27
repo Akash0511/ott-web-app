@@ -1,14 +1,14 @@
 <mat-card-header class="header" (click)="viewShowDetail(showInfo.id)">
     <div mat-card-avatar class="example-header-image" style="background-image: url({{showInfo.imgUrl}});"></div>
     <mat-card-title>{{showInfo.name}}</mat-card-title>
-    <mat-card-subtitle>{{showInfo.brand}}</mat-card-subtitle>
+    <mat-card-subtitle>{{showInfo.genre}}</mat-card-subtitle>
 </mat-card-header>
 <img class="image" height="400" mat-card-image src={{showInfo.imgUrl}} alt="Photo of a Product"
     (click)="viewShowDetail(showInfo.id)">
 <mat-card-content>
     <div class="priceRating">
-        <h2>{{showInfo.price | currency : 'INR'}}</h2>
-        <app-rating [starRating]="showInfo.rating"></app-rating>
+        <!-- <h2>{{showInfo.price | currency : 'INR'}}</h2> -->
+        <app-imdb-rating [imdbRating]="showInfo.imdbRating"></app-imdb-rating>
     </div>
     <p>
         {{showInfo.description}}

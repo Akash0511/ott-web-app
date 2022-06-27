@@ -5,6 +5,15 @@
 
 .card {
     margin: 0 auto;
-    float: none; 
-    
+    float: none;
+}
+
+::ng-deep .danger-style {
+    background-color: brown;
+    color: white;
+}
+
+::ng-deep .success-style {
+    background-color: seagreen;
+    color: white;
 }

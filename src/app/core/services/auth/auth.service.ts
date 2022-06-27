@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { LoginDetails } from '../../interfaces/loginDetails.model';
+import { User } from '../../interfaces/user.model';
 
 const USERNAME_KEY = 'AuthUserName';
 const USERROLE_KEY = 'AuthUserRole';
@@ -11,12 +11,13 @@ const USERROLE_KEY = 'AuthUserRole';
 export class AuthService {
 
   validateUserIdentitySubject = new BehaviorSubject<boolean>(this.isAuthenticated());
+  validateAdminIdentitySubject = new BehaviorSubject<boolean>(this.isAdmin());
 
   constructor() { }
 
-  public logIn(userData: LoginDetails): Observable<string> {
-    this.saveUserName(userData.email);
-    this.saveUserRole(userData.userRole);
+  public logIn(userData: User): Observable<string> {
+    this.saveUserName(userData.userName);
+    this.saveUserRole(userData.role);
     this.validateUserIdentitySubject.next(true);
     return of('login success');
   }
@@ -26,6 +27,7 @@ export class AuthService {
     localStorage.removeItem(USERROLE_KEY);
     localStorage.clear();
     this.validateUserIdentitySubject.next(false);
+    this.validateAdminIdentitySubject.next(false);
   }
 
   public saveUserName(userName: string): void {

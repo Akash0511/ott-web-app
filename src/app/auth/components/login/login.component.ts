@@ -47,8 +47,12 @@ export class LoginComponent implements OnInit {
     const user: LoginDetails = this.loginForm.value as LoginDetails;
     this.userService.getUserDetail(user.email, user.password).subscribe(response => {
       if (response !== undefined) {
-        this.authService.logIn(user).subscribe(resp => {
-          this.router.navigateByUrl('');
+        this.authService.logIn(response).subscribe(resp => {
+          if (this.authService.getUserRole() === 'admin') {
+            this.router.navigateByUrl('/admin');
+          } else {
+            this.router.navigateByUrl('/home');
+          }
         });
       } else {
         this.showSnackBar(this.translateService.instant('LOGIN.INVALID_CREDENTIAL_MESSAGE'),

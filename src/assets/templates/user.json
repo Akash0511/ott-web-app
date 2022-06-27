@@ -15,7 +15,7 @@
         "lastName": "Goyal",
         "userName": "arun@nagarro.com",
         "phoneNumber": "9934125612",
-        "password": "abc123",
+        "pwd": "abc123",
         "role": "user",
         "isPrimeMember": true
     },
@@ -25,7 +25,7 @@
         "lastName": "Garg",
         "userName": "ravi@nagarro.com",
         "phoneNumber": "8834125612",
-        "password": "abc123",
+        "pwd": "abc123",
         "role": "user",
         "isPrimeMember": false
     }

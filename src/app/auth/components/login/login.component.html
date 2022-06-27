@@ -10,10 +10,10 @@
                     <label for="email">{{ 'LOGIN.EMAIL' | translate }}</label>
                     <input type="email" class="form-control" id="email" formControlName="email"
                         [ngClass]="getControlValidationClasses(emailControl)">
-                    <div class="invalid-feedback" *ngIf="emailControl.touched && emailControl.errors?.required">
+                    <div class="invalid-feedback" *ngIf="emailControl.touched && emailControl.errors?.['required']">
                         {{ 'LOGIN.EMAIL_REQUIRED' | translate }}
                     </div>
-                    <div class="invalid-feedback" *ngIf="emailControl.touched && emailControl.errors?.email">
+                    <div class="invalid-feedback" *ngIf="emailControl.touched && emailControl.errors?.['email']">
                         {{ 'LOGIN.VALID_EMAIL' | translate }}
                     </div>
                 </div>
@@ -21,7 +21,8 @@
                     <label for="password-control">{{ 'LOGIN.PASSWORD' | translate }}</label>
                     <input type="password" class="form-control" id="password" formControlName="password"
                         [ngClass]="getControlValidationClasses(passwordControl)">
-                    <div class="invalid-feedback" *ngIf="passwordControl.touched && passwordControl.errors?.required">
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['required']">
                         {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
                     </div>
                 </div>
@@ -34,3 +35,4 @@
             </form>
         </div>
     </div>
+</div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/core/guards/auth.guard';
+import { AuthAdminGuard } from 'src/app/core/guards/auth-admin.guard';
 import { AddPrimeOffersComponent } from './components/add-prime-offers/add-prime-offers.component';
 import { AddShowsComponent } from './components/add-shows/add-shows.component';
 import { AdminMainPageComponent } from './components/admin-main-page/admin-main-page.component';
@@ -10,10 +10,10 @@ const routes: Routes = [{
   component: AdminMainPageComponent,
   children: [
     {
-      path: 'movie', component: AddShowsComponent, canActivate: [AuthGuard]
+      path: 'show', component: AddShowsComponent, canActivate: [AuthAdminGuard]
     },
     {
-      path: 'prime-package', component: AddPrimeOffersComponent, canActivate: [AuthGuard]
+      path: 'prime-package', component: AddPrimeOffersComponent, canActivate: [AuthAdminGuard]
     }
   ],
 },

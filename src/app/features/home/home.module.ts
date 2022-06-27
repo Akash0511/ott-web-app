@@ -11,13 +11,16 @@ import { GenerateShowsComponent } from './components/generate-shows/generate-sho
 import { ShowsDetailPageComponent } from './components/shows-detail-page/shows-detail-page.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TranslateModule } from '@ngx-translate/core';
+import { ImdbRatingComponent } from './components/imdb-rating/imdb-rating.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const components = [
   ReviewsComponent,
   HomeComponent,
   MainPageComponent,
   GenerateShowsComponent,
-  ShowsDetailPageComponent
+  ShowsDetailPageComponent,
+  ImdbRatingComponent
 ]
 
 @NgModule({
@@ -30,6 +33,7 @@ const components = [
     MatCardModule,
     MatIconModule,
     NgxPaginationModule,
+    NgbModule,
     TranslateModule
   ]
 })

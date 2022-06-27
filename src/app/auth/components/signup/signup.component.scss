@@ -1,0 +1,19 @@
+.container {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+}
+
+::ng-deep .danger-style {
+    background-color: brown;
+    color: white;
+}
+
+::ng-deep .success-style {
+    background-color: seagreen;
+    color: white;
+}

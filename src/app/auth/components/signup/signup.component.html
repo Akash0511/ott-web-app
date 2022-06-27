@@ -1,1 +1,127 @@
-<p>signup works!</p>
+<div class="container">
+    <div class="card bg-light" style="width: 25rem">
+        <div class="card-header text-center" style="font-size: large; font-weight: bold;">
+            {{ 'SIGNUP.HEADER' | translate }}
+        </div>
+        <img class="card-img" [src]="imgUrl" height="210px">
+        <div class="card-body">
+            <form class="needs-validation" nonvalidate [formGroup]="signupForm" (ngSubmit)="onSignup()">
+                <div class="form-group">
+                    <label for="firstName">{{ 'SIGNUP.FIRSTNAME' | translate }}</label>
+                    <input type="text" class="form-control" id="firstName" formControlName="firstName"
+                        [ngClass]="getControlValidationClasses(firstNameControl)">
+                    <div class="invalid-feedback"
+                        *ngIf="firstNameControl.touched && firstNameControl.errors?.['required']">
+                        {{ 'SIGNUP.FIRSTNAME_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="firstNameControl.touched && firstNameControl.errors?.['minlength']">
+                        {{ 'SIGNUP.FIRSTNAME_MINLENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="firstNameControl.touched && firstNameControl.errors?.['pattern']">
+                        {{ 'SIGNUP.FIRSTNAME_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">{{ 'SIGNUP.LASTNAME' | translate }}</label>
+                    <input type="text" class="form-control" id="lastName" formControlName="lastName"
+                        [ngClass]="getControlValidationClasses(lastNameControl)">
+                    <div class="invalid-feedback"
+                        *ngIf="lastNameControl.touched && lastNameControl.errors?.['required']">
+                        {{ 'SIGNUP.LASTNAME_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="lastNameControl.touched && lastNameControl.errors?.['minlength']">
+                        {{ 'SIGNUP.FIRSTNAME_MINLENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="lastNameControl.touched && lastNameControl.errors?.['pattern']">
+                        {{ 'SIGNUP.FIRSTNAME_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">{{ 'SIGNUP.PHONE' | translate }}</label>
+                    <input type="text" class="form-control" id="phone" formControlName="phone"
+                        [ngClass]="getControlValidationClasses(phoneControl)">
+                    <div class="invalid-feedback" *ngIf="phoneControl.touched && phoneControl.errors?.['required']">
+                        {{ 'SIGNUP.PHONE_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="phoneControl.touched && phoneControl.errors?.['minlength']">
+                        {{ 'SIGNUP.PHONE_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="phoneControl.touched && phoneControl.errors?.['maxlength']">
+                        {{ 'SIGNUP.PHONE_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="phoneControl.touched && phoneControl.errors?.['pattern']">
+                        {{ 'SIGNUP.PHONE_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userName">{{ 'SIGNUP.EMAIL' | translate }}</label>
+                    <input type="email" class="form-control" id="userName" formControlName="userName"
+                        [ngClass]="getControlValidationClasses(emailControl)">
+                    <div class="invalid-feedback" *ngIf="emailControl.touched && emailControl.errors?.['required']">
+                        {{ 'SIGNUP.EMAIL_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="emailControl.touched && emailControl.errors?.['email']">
+                        {{ 'SIGNUP.VALID_EMAIL' | translate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd-control">{{ 'SIGNUP.PASSWORD' | translate }}</label>
+                    <input type="password" class="form-control" id="pwd" formControlName="pwd"
+                        [ngClass]="getControlValidationClasses(passwordControl)">
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['required']">
+                        {{ 'SIGNUP.PASSWORD_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['minlength']">
+                        {{ 'SIGNUP.PASSWORD_MIN_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['maxlength']">
+                        {{ 'SIGNUP.PASSWORD_MAX_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['pattern']">
+                        {{ 'SIGNUP.PASSWORD_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">{{ 'SIGNUP.CONFIRMPASSWORD' | translate }}</label>
+                    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+                        [ngClass]="getControlValidationClasses(confirmPasswordControl)">
+                    <div class="invalid-feedback"
+                        *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['required']">
+                        {{ 'SIGNUP.CONFIRMPASSWORD_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['minlength']">
+                        {{ 'SIGNUP.PASSWORD_MIN_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['maxlength']">
+                        {{ 'SIGNUP.PASSWORD_MAX_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['pattern']">
+                        {{ 'SIGNUP.PASSWORD_FORMAT' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['matching'] && !confirmPasswordControl.errors?.['required']">
+                        {{ 'SIGNUP.PASSWORD_MIS_MATCH' | translate }}
+                    </div>
+                </div>
+                <div class="col-sm-12" style="text-align: center; margin-bottom: 30px;">
+                    <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">{{
+                        'SIGNUP.SIGNUP_BUTTON'
+                        | translate }}</button>
+                    <button type="submit" class="btn btn-primary" routerLink="/auth/login">{{ 'SIGNUP.CANCEL'
+                        | translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
