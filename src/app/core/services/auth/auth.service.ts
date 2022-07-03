@@ -4,6 +4,7 @@ import { User } from '../../interfaces/user.model';
 
 const USERNAME_KEY = 'AuthUserName';
 const USERROLE_KEY = 'AuthUserRole';
+const USERID_KEY = 'AuthUserId';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class AuthService {
   public logIn(userData: User): Observable<string> {
     this.saveUserName(userData.userName);
     this.saveUserRole(userData.role);
+    this.saveUserId(userData.userId);
     this.validateUserIdentitySubject.next(true);
     return of('login success');
   }
@@ -25,6 +27,7 @@ export class AuthService {
   public logOut(): void {
     localStorage.removeItem(USERNAME_KEY);
     localStorage.removeItem(USERROLE_KEY);
+    localStorage.removeItem(USERID_KEY);
     localStorage.clear();
     this.validateUserIdentitySubject.next(false);
     this.validateAdminIdentitySubject.next(false);
@@ -65,5 +68,14 @@ export class AuthService {
 
   public isLoggedIn(): Observable<boolean> {
     return this.validateUserIdentitySubject.asObservable();
+  }
+
+  public saveUserId(userId: string): void {
+    localStorage.removeItem(USERID_KEY);
+    localStorage.setItem(USERID_KEY, userId);
+  }
+
+  public getUserId(): any {
+    return localStorage.getItem(USERID_KEY);
   }
 }

@@ -1,16 +1,17 @@
 .example-header-image {
-    background-size: cover;
-  }
-
-.image, .header {
-    cursor: pointer;
+  background-size: cover;
 }
 
-.priceRating{
-  display:flex;
+.image,
+.header {
+  cursor: pointer;
+}
+
+.imdbRating {
+  display: flex;
   justify-content: space-between;
 }
 
-p{
-  text-align:justify
+p {
+  text-align: justify
 }

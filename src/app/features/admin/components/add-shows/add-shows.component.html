@@ -1,1 +1,124 @@
-<p>add-shows works!</p>
+<div class="container">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">{{ 'ADD_SHOW.SHOW_TEXT' | translate }}</div>
+        <div class="card-body">
+            <form class="needs-validation" nonvalidate [formGroup]="addShowForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">{{ 'ADD_SHOW.NAME' | translate }}</label>
+                        <input type="text" class="form-control" id="name" formControlName="name"
+                            [ngClass]="getControlValidationClasses(showNameControl)">
+                        <div class="invalid-feedback"
+                            *ngIf="showNameControl.touched && showNameControl.errors?.['required']">
+                            {{ 'ADD_SHOW.NAME_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="showNameControl.touched && showNameControl.errors?.['minlength']">
+                            {{ 'ADD_SHOW.MIN_LENGTH' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="showNameControl.touched && showNameControl.errors?.['pattern']">
+                            {{ 'ADD_SHOW.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="title">{{ 'ADD_SHOW.TITLE' | translate }}</label>
+                        <input type="text" class="form-control" id="title" formControlName="title"
+                            [ngClass]="getControlValidationClasses(showTitleControl)">
+                        <div class="invalid-feedback"
+                            *ngIf="showTitleControl.touched && showTitleControl.errors?.['required']">
+                            {{ 'ADD_SHOW.TITLE_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="showTitleControl.touched && showTitleControl.errors?.['minlength']">
+                            {{ 'ADD_SHOW.MIN_LENGTH' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="showTitleControl.touched && showTitleControl.errors?.['pattern']">
+                            {{ 'ADD_SHOW.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="description" class="form-label">{{ 'ADD_SHOW.DESCRIPTION' | translate }}</label>
+                        <textarea id="description" class="form-control" id="description" rows="1"
+                            formControlName="description"
+                            [ngClass]="getControlValidationClasses(showDescriptionControl)"></textarea>
+                        <div class="invalid-feedback"
+                            *ngIf="showDescriptionControl.touched && showDescriptionControl.errors?.['required']">
+                            {{ 'ADD_SHOW.DESCRIPTION_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="showDescriptionControl.touched && showDescriptionControl.errors?.['pattern']">
+                            {{ 'ADD_SHOW.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="language">{{ 'ADD_SHOW.LANGUAGE' | translate }}</label>
+                        <select id="language" class="form-control" formControlName="language"
+                            [ngClass]="getControlValidationClasses(showLanguageControl)">
+                            <option>Bollywood</option>
+                            <option>Hollywood</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="showLanguageControl.touched && showLanguageControl.errors?.['required']">
+                            {{ 'ADD_SHOW.LANGUAGE_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="genre">{{ 'ADD_SHOW.GENRE' | translate }}</label>
+                        <select id="genre" class="form-control" formControlName="genre"
+                            [ngClass]="getControlValidationClasses(showGenreControl)">
+                            <option>Sci-Fi</option>
+                            <option>Action</option>
+                            <option>Comedy</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="showGenreControl.touched && showGenreControl.errors?.['required']">
+                            {{ 'ADD_SHOW.GENRE_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="imdbRating">{{ 'ADD_SHOW.RATING' | translate }}</label>
+                        <select id="imdbRating" class="form-control" formControlName="imdbRating"
+                            [ngClass]="getControlValidationClasses(showImdbRatingControl)">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="showImdbRatingControl.touched && showImdbRatingControl.errors?.['required']">
+                            {{ 'ADD_SHOW.RATING_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="isAvailableOnPrime">{{ 'ADD_SHOW.IS_PRIME' | translate }}</label>
+                        <select id="isAvailableOnPrime" class="form-control" formControlName="isAvailableOnPrime"
+                            [ngClass]="getControlValidationClasses(isAvailableOnPrimeControl)">
+                            <option>false</option>
+                            <option>true</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="isAvailableOnPrimeControl.touched && isAvailableOnPrimeControl.errors?.['required']">
+                            {{ 'ADD_SHOW.IS_PRIME_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;padding: 3px;">
+                    <button type="submit" class="btn btn-success" (click)="onFormSubmit()"
+                        [disabled]="!addShowForm.valid">{{ 'ADD_SHOW.ADD' | translate }}</button>&nbsp;
+                    <button type="button" class="btn btn-warning" (click)="onCancelClicked()">{{ 'SIGNUP.CANCEL' |
+                        translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

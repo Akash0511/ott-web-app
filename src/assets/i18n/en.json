@@ -50,5 +50,41 @@
     "CANCEL": "Cancel",
     "USER_ALREADY_EXIST": "User already exist",
     "USER_CREATED_SUCCESSFULLY": "User created successfully"
+  },
+  "ADD_SHOW": {
+    "SHOW_TEXT": "Add Show Details",
+    "NAME": "Name",
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "LANGUAGE": "Language",
+    "GENRE": "Genre",
+    "RATING": "IMDB Rating",
+    "IS_PRIME": "Available for Prime Users",
+    "ADD": "Add Show",
+    "NAME_REQUIRED": "Please enter show name",
+    "TITLE_REQUIRED": "Please enter show title",
+    "DESCRIPTION_REQUIRED": "Please add description",
+    "IS_PRIME_REQUIRED": "Please specify if show is prime",
+    "RATING_REQUIRED": "Please provide rating",
+    "GENRE_REQUIRED": "Please select Genre",
+    "LANGUAGE_REQUIRED": "Please select language",
+    "MIN_LENGTH": "Please enter atleast 4 characters.",
+    "ONLY_ALPHABETS": "Only alphabets allowed.",
+    "SHOW_ALREADY_EXIST": "Show Already Exists.",
+    "SHOW_CREATED_SUCCESSFULLY": "Show data added successfully."
+  },
+  "ADD_PRIME_OFFER": {
+    "PRIME_TEXT": "Add Prime Offer Details",
+    "NAME": "Offer Name",
+    "NAME_REQUIRED": "Please enter offer name",
+    "MIN_LENGTH": "Offer name should be of atleast 3 characters.",
+    "ONLY_ALPHABETS": "Should contain alphabets only.",
+    "DESCRIPTION": "Offer Description",
+    "DURATION": "Duration in Months",
+    "DURATION_REQUIRED": "Please specify offer duration in months.",
+    "DURATION_FORMAT": "Please enter numeric characters only.",
+    "PRICE": "Price",
+    "ADD": "Add Offer",
+    "PACKAGE_ADDED_SUCCESSFULLY": "Offer data added successfully."
   }
 }

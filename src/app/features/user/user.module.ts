@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { CreateReviewComponent } from './components/create-review/create-review.component';
 import { GetPrimeMembershipComponent } from './components/get-prime-membership/get-prime-membership.component';
-import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const components = [
   CreateReviewComponent,
@@ -18,7 +18,7 @@ const components = [
   imports: [
     CommonModule,
     UserRoutingModule,
-    TranslateModule
+    SharedModule
   ]
 })
 export class UserModule { }

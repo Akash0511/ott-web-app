@@ -6,8 +6,7 @@
 <img class="image" height="400" mat-card-image src={{showInfo.imgUrl}} alt="Photo of a Product"
     (click)="viewShowDetail(showInfo.id)">
 <mat-card-content>
-    <div class="priceRating">
-        <!-- <h2>{{showInfo.price | currency : 'INR'}}</h2> -->
+    <div class="imdbRating">
         <app-imdb-rating [imdbRating]="showInfo.imdbRating"></app-imdb-rating>
     </div>
     <p>

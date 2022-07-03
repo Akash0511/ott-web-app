@@ -12,15 +12,14 @@ export class ShowsService {
   readonly SHOW_SERVICE_BASE_URL = '/assets/templates';
 
   constructor(private readonly http: HttpClient) {
-    this.getAllShows();
+    this.getAllShows().subscribe(data => {
+      this.showsList.next(data);
+    });
   }
 
   public getAllShows(): Observable<Show[]> {
     const url = `${this.SHOW_SERVICE_BASE_URL}/shows.json`;
-    this.http.get<Show[]>(url).subscribe(data => {
-      this.showsList.next(data as Show[]);
-    });
-    return this.showsList.asObservable();
+    return this.http.get<Show[]>(url);
   }
 
   public getShows(): Observable<Show[]> {

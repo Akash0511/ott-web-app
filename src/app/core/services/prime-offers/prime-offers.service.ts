@@ -12,24 +12,18 @@ export class PrimeOffersService {
   readonly PRIME_OFFERS_SERVICE_BASE_URL = '/assets/templates';
 
   constructor(private readonly http: HttpClient) {
-    this.getAllPrimeOffers();
+    this.getAllPrimeOffers().subscribe(data => {
+      this.primeOffersList.next(data as PrimeOffers[]);
+    });
   }
 
   public getAllPrimeOffers(): Observable<PrimeOffers[]> {
     const url = `${this.PRIME_OFFERS_SERVICE_BASE_URL}/prime-offers.json`;
-    this.http.get<PrimeOffers[]>(url).subscribe(data => {
-      this.primeOffersList.next(data as PrimeOffers[]);
-    });
-    return this.primeOffersList.asObservable();
+    return this.http.get<PrimeOffers[]>(url);
   }
 
   public getPrimeOffers(): Observable<PrimeOffers[]> {
     return this.primeOffersList.asObservable();
-  }
-
-  public getPrimeOffersDetails(primeOfferId: string): Observable<PrimeOffers> {
-    return this.getPrimeOffers().pipe(
-      map(items => items.filter(item => item.id === primeOfferId)[0]));
   }
 
   public addPrimeOffers(primeOffersObj: PrimeOffers): Observable<string> {

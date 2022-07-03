@@ -15,6 +15,6 @@ export class ShowsResolver implements Resolve<Show[]> {
   constructor(private showsService: ShowsService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Show[]> {
-    return this.showsService.getShows();
+    return this.showsService.getAllShows();
   }
 }

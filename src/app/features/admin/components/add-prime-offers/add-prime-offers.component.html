@@ -1,1 +1,76 @@
-<p>add-prime-offers works!</p>
+<div class="container">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">{{ 'ADD_PRIME_OFFER.PRIME_TEXT' | translate }}</div>
+        <div class="card-body">
+            <form class="needs-validation" nonvalidate [formGroup]="addPrimeOfferForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">{{ 'ADD_PRIME_OFFER.NAME' | translate }}</label>
+                        <input type="text" class="form-control" id="name" formControlName="name"
+                            [ngClass]="getControlValidationClasses(primeNameControl)">
+                        <div class="invalid-feedback"
+                            *ngIf="primeNameControl.touched && primeNameControl.errors?.['required']">
+                            {{ 'ADD_PRIME_OFFER.NAME_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="primeNameControl.touched && primeNameControl.errors?.['minlength']">
+                            {{ 'ADD_PRIME_OFFER.MIN_LENGTH' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="primeNameControl.touched && primeNameControl.errors?.['pattern']">
+                            {{ 'ADD_PRIME_OFFER.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="durationInMonths">{{ 'ADD_PRIME_OFFER.DURATION' | translate }}</label>
+                        <input type="text" class="form-control" id="durationInMonths" formControlName="durationInMonths"
+                            [ngClass]="getControlValidationClasses(primeDurationControl)">
+                        <div class="invalid-feedback"
+                            *ngIf="primeDurationControl.touched && primeDurationControl.errors?.['required']">
+                            {{ 'ADD_PRIME_OFFER.DURATION_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="primeDurationControl.touched && primeDurationControl.errors?.['pattern']">
+                            {{ 'ADD_PRIME_OFFER.DURATION_FORMAT' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="price">{{ 'ADD_PRIME_OFFER.PRICE' | translate }}</label>
+                        <input type="text" class="form-control" id="price" formControlName="price"
+                            [ngClass]="getControlValidationClasses(primePriceControl)">
+                        <div class="invalid-feedback"
+                            *ngIf="primePriceControl.touched && primePriceControl.errors?.['required']">
+                            {{ 'ADD_PRIME_OFFER.PRICE_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="primePriceControl.touched && primePriceControl.errors?.['pattern']">
+                            {{ 'ADD_PRIME_OFFER.DURATION_FORMAT' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="description" class="form-label">{{ 'ADD_PRIME_OFFER.DESCRIPTION' | translate
+                            }}</label>
+                        <textarea id="description" class="form-control" id="description" rows="1"
+                            formControlName="description"
+                            [ngClass]="getControlValidationClasses(primeDescriptionControl)"></textarea>
+                        <div class="invalid-feedback"
+                            *ngIf="primeDescriptionControl.touched && primeDescriptionControl.errors?.['pattern']">
+                            {{ 'ADD_PRIME_OFFER.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;padding: 3px;">
+                    <button type="submit" class="btn btn-success" (click)="onPrimeOfferFormSubmit()"
+                        [disabled]="!addPrimeOfferForm.valid">{{ 'ADD_PRIME_OFFER.ADD' | translate }}</button>&nbsp;
+                    <button type="button" class="btn btn-warning" [routerLink]="['/shows']">{{ 'SIGNUP.CANCEL' |
+                        translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

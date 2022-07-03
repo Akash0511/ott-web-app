@@ -4,13 +4,11 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AddShowsComponent } from './components/add-shows/add-shows.component';
 import { AddPrimeOffersComponent } from './components/add-prime-offers/add-prime-offers.component';
-import { AdminMainPageComponent } from './components/admin-main-page/admin-main-page.component';
-import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const components = [
   AddShowsComponent,
-  AddPrimeOffersComponent,
-  AdminMainPageComponent
+  AddPrimeOffersComponent
 ]
 @NgModule({
   declarations: [
@@ -19,7 +17,7 @@ const components = [
   imports: [
     CommonModule,
     AdminRoutingModule,
-    TranslateModule
+    SharedModule
   ]
 })
 export class AdminModule { }

@@ -18,7 +18,7 @@ export class GenerateShowsComponent implements OnInit {
   }
 
   viewShowDetail(showId: string): void {
-    this.router.navigateByUrl('/home/shows/' + showId);
+    this.router.navigateByUrl('/shows/' + showId);
   }
 
 }
