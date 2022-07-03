@@ -70,6 +70,10 @@ export class AuthService {
     return this.validateUserIdentitySubject.asObservable();
   }
 
+  public isLoggedInAsAdmin(): Observable<boolean> {
+    return this.validateAdminIdentitySubject.asObservable();
+  }
+
   public saveUserId(userId: string): void {
     localStorage.removeItem(USERID_KEY);
     localStorage.setItem(USERID_KEY, userId);

@@ -1,1 +1,31 @@
-<p>category works!</p>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown"
+        aria-expanded="false" aria-haspopup="true">
+        {{ 'CATEGORY.CATEGORY_SELECT' | translate }}
+    </a>
+    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <div class="dropdown-item">
+            <div (click)="onShowCategorySelected('','')">All</div>
+        </div>
+        <div class="dropdown-submenu" *ngFor="let category of showCategoryData">
+            <a class="dropdown-item" tabindex="-1">{{category.name}}</a>
+            <div class="dropdown-menu" *ngIf="category.children">
+                <div *ngFor="let subCategory of category.children">
+                    <li class="dropdown-submenu" *ngIf="subCategory.children">
+                        <a class="dropdown-item">{{subCategory.name}}</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item" *ngFor="let subCategorychild of subCategory.children">
+                                <div (click)="onShowCategorySelected(category.name,subCategorychild.name)">
+                                    {{subCategorychild.name}}</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="dropdown-item" *ngIf="!subCategory.children">
+                        <div (click)="onShowCategorySelected(category.name,subCategory.name)">{{subCategory.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</li>

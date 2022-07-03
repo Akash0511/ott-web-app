@@ -1,1 +1,10 @@
-<p>search-shows works!</p>
+<form class="form-inline my-2 my-lg-0" nonvalidate [formGroup]="searchForm">
+    <input #searchShow (input)="searchShowByName(searchShow.value)" class="form-control mr-sm-2" type="search"
+        placeholder="{{ 'HEADER.SEARCH_PLACEHOLDER' | translate }}" aria-label="Search" formControlName="searchShowName"
+        [ngClass]="getControlValidationClasses(searchShowNameControl)">
+    <div class="invalid-feedback" *ngIf="searchShowNameControl.touched && searchShowNameControl.errors?.['minlength']">
+        must be of atleast length 1
+    </div>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!searchForm.valid"
+        (click)="onSearchSubmit()">{{ 'HEADER.SEARCH' | translate }}</button>
+</form>

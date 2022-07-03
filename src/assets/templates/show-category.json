@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Bollywood",
+        "children": [
+            {
+                "name": "Sci-Fi"
+            },
+            {
+                "name": "Action"
+            },
+            {
+                "name": "Comedy"
+            }
+        ]
+    },
+    {
+        "name": "Hollywood",
+        "children": [
+            {
+                "name": "Sci-Fi"
+            },
+            {
+                "name": "Action"
+            },
+            {
+                "name": "Comedy"
+            }
+        ]
+    }
+]
