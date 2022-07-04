@@ -1,1 +1,24 @@
-<p>get-prime-membership works!</p>
+<div class="container">
+    <h4 class="main-data">{{ 'TAKE_PRIME.TITLE' | translate }}</h4>
+    <div class="card-group">
+        <div class="card-data" *ngFor="let primeOffer of primeOffers">
+            <mat-card class="example-card" [style]="{'width': '20rem', 'margin-bottom': '2em', 'height': '200px'}">
+                <mat-card-title>{{primeOffer.name}}</mat-card-title>
+                <mat-card-subtitle>
+                    <div class="price-duration">
+                        <span class="price">{{primeOffer.price | currency:'INR': 'symbol' : '1.0-0'}}</span>
+                        <span class="duration">{{primeOffer.durationInMonths}} {{ 'TAKE_PRIME.DURATION' | translate
+                            }}</span>
+                    </div>
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <p>{{primeOffer.description}}.</p>
+                </mat-card-content>
+                <mat-card-actions style="text-align: center;">
+                    <button style="background-color: whitesmoke; color: black;" mat-button (click)="optPrimeOffers()">{{ 'TAKE_PRIME.OPT_PRIME' | translate
+                        }}</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

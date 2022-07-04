@@ -1,0 +1,42 @@
+.container {
+    margin-top: 30px;
+    justify-content: center;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.card-group {
+    margin-top: 20px;
+}
+
+.card-data {
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.example-card {
+    max-width: 400px;
+    margin-right: 5px;
+}
+
+.duration {
+    float: right;
+    font-weight: 200;
+}
+
+.price {
+    float: left;
+    font-weight: 200;
+}
+
+.price-duration {
+    display: inline-block;
+    width: 70%;
+}
+
+::ng-deep .success-style {
+    background-color: seagreen;
+    color: white;
+}

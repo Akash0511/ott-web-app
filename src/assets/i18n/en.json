@@ -6,19 +6,23 @@
     "LANGUAGE": "Language",
     "MARK_FAVOURITE": "Add to Favourite",
     "VIEW_FAV_SHOWS": "Your Favourite Shows"
-
   },
   "HEADER": {
-    "TITLE": "Ecommerce-App",
+    "TITLE": "OTT-App",
     "HOME": "Home",
-    "CART": "Cart",
     "LANGUAGE": "Language",
     "SELECT_ENGLISH": "English",
     "SELECT_HINDI": "Hindi",
     "SEARCH": "Search",
-    "SEARCH_PLACEHOLDER": "Search by name",
+    "SEARCH_PLACEHOLDER": "Search show by name",
     "LOGIN": "Login",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "PRIME": "Prime",
+    "CATEGORY_SELECT": "Select Genre",
+    "ADD_SHOW": "Add Show",
+    "ADD_PRIME": "Add Prime Membership Offers",
+    "MY_FAV_SHOWS": "Favourite",
+    "MY_WATCHED_SHOWS": "Watched"
   },
   "LOGIN": {
     "HEADER": "LOG-IN",
@@ -100,5 +104,11 @@
     "REVIEW_TITLE": "Please provide your valuable feedback",
     "REVIEW": "Enter Review",
     "REVIEW_REQUIRED": "Please enter review"
+  },
+  "TAKE_PRIME":{
+    "TITLE": "Prime Membership Offers",
+    "DURATION": "Month/Months",
+    "OPT_PRIME": "Opt Prime membership",
+    "SUCCESSFULL": "Congratulations! You are now a Prime member"
   }
 }

@@ -38,10 +38,9 @@ export class FavouriteShowsService {
 
   markShowAsFav(dataObj: FavouriteShows): Observable<string> {
     const favWatchedList = this.favWatchedShowsList.getValue();
-    let response = this.getUserFavShow(dataObj.userId, dataObj.showId);
-    if (response !== undefined) {
-      response.isMarkedAsFavorite = true;
-      favWatchedList.push(response);
+    let response = this.getUserFavShowIndex(dataObj.userId, dataObj.showId);
+    if (response !== -1) {
+      favWatchedList[response].isMarkedAsFavorite = true;
     } else {
       favWatchedList.push(dataObj);
     }
@@ -51,10 +50,9 @@ export class FavouriteShowsService {
 
   markShowAsWatched(dataObj: FavouriteShows): void {
     const favWatchedList = this.favWatchedShowsList.getValue();
-    let response = this.getUserFavShow(dataObj.userId, dataObj.showId);
-    if (response !== undefined) {
-      response.isMarkedAsWatched = true;
-      favWatchedList.push(response);
+    let response = this.getUserFavShowIndex(dataObj.userId, dataObj.showId);
+    if (response !== -1) {
+      favWatchedList[response].isMarkedAsWatched = true;
     } else {
       favWatchedList.push(dataObj);
     }
@@ -75,10 +73,9 @@ export class FavouriteShowsService {
 
   removeFavShow(userId: string, showId: string): Observable<string> {
     const favWatchedList = this.favWatchedShowsList.getValue();
-    let response = this.getUserFavShow(userId, showId);
-    if (response !== undefined) {
-      response.isMarkedAsFavorite = false;
-      favWatchedList.push(response);
+    let response = this.getUserFavShowIndex(userId, showId);
+    if (response !== -1) {
+      favWatchedList[response].isMarkedAsFavorite = false;
       this.favWatchedShowsList.next(favWatchedList);
       return of('Favourite show removed!!!');
     }
@@ -88,5 +85,10 @@ export class FavouriteShowsService {
   getUserFavShow(userId: string, showId: string): FavouriteShows {
     return this.favWatchedShowsList.getValue().find(item =>
       item.userId === userId && item.showId === showId) as FavouriteShows;
+  }
+
+  getUserFavShowIndex(userId: string, showId: string): number {
+    return this.favWatchedShowsList.getValue().findIndex(item =>
+      item.userId === userId && item.showId === showId);
   }
 }

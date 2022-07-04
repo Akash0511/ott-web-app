@@ -1,6 +1,104 @@
 [
     {
         "id": "1",
+        "name": "Atal",
+        "title": "Atal ‘The Untold Vajpayee: Politician and Paradox’",
+        "description": "Atal Bihari Vajpayee’s life painted on the silver screen as a movie on the former Prime Minister of India has been announced. Titled, ‘Main RahoonYa Na Rahoon, Yeh Desh Rehna Chahiye – Atal’, this movie is an adaptation of Ullekh NP’s book ‘The Untold Vajpayee: Politician and Paradox’.",
+        "language": "Bollywood",
+        "genre": "Drama",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Atal.jpg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Rashtra Kavach OM",
+        "title": "Rashtra Kavach OM",
+        "description": "Rashtra Kavach Om is a 2022 Indian Hindi-language action thriller film directed by Kapil Verma and produced by Zee Studios and Ahmed Khan. It stars Aditya Roy Kapur, Sanjana Sanghi, Jackie Shroff, Ashutosh Rana, Prakash Raj and Prachee Shah Paandya",
+        "language": "Bollywood",
+        "genre": "Action",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Rashtra-Kavach.jpg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Brahmastra ",
+        "title": "Brahmastra Part One",
+        "description": "This is the story of Shiva who sets out in search of love and self-discovery. During his journey, he has to face many evil forces that threaten our existence.",
+        "language": "Bollywood",
+        "genre": "Adventure",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Brahmastra.jpg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Bhool Bhulaiyaa 2",
+        "title": "Bhool Bhulaiyaa 2",
+        "description": "An accidental, yet destined meet up between two strangers Ruhaan and Reet, ends up with them visiting Reet's home town in Rajasthan. Fate leads them to opening up an old secret due to which all hell breaks loose leading to one lie and their tragedy keeps becoming our comedy.",
+        "language": "Bollywood",
+        "genre": "Comedy",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Bhool-Bhulaiyaa-2.jpeg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Bhool Bhulaiyaa 2",
+        "title": "Bhool Bhulaiyaa 2",
+        "description": "An accidental, yet destined meet up between two strangers Ruhaan and Reet, ends up with them visiting Reet's home town in Rajasthan. Fate leads them to opening up an old secret due to which all hell breaks loose leading to one lie and their tragedy keeps becoming our comedy.",
+        "language": "Bollywood",
+        "genre": "Comedy",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Bhool-Bhulaiyaa-2.jpeg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Major",
+        "title": "Major",
+        "description": "Based on the life of Major Sandeep Unnikrishnan, who was martyred in action during the November 2008 Mumbai attacks and was consequently awarded the Ashoka Chakra, India's highest peacetime gallantry award, on 26 January 2009.",
+        "language": "Bollywood",
+        "genre": "Biography",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Major.jpg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Batman",
+        "title": "Batman",
+        "description": "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+        "language": "Bollywood",
+        "genre": "Action",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/Batman.jpg",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "8",
         "name": "RRR",
         "title": "RRR (Rise Roar Revolt)",
         "description": "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in 1920s",
@@ -15,7 +113,7 @@
         ]
     },
     {
-        "id": "2",
+        "id": "9",
         "name": "Thor",
         "title": "Thor: Love and Thunder",
         "description": "Thor enlists the help of Valkyrie, Korg and e/x-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",

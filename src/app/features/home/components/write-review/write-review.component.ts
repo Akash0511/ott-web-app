@@ -27,7 +27,6 @@ export class WriteReviewComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.showService.addShowReview(this.showId, result);
-      console.log(`Dialog result: ${result}`);
     });
   }
 }

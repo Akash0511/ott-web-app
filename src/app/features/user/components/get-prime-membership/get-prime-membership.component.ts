@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { PrimeOffers } from 'src/app/core/interfaces/primeOffers.model';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-get-prime-membership',
@@ -7,9 +13,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetPrimeMembershipComponent implements OnInit {
 
-  constructor() { }
+  primeOffers: PrimeOffers[] = [];
+
+  constructor(private readonly route: ActivatedRoute,
+    private readonly authService: AuthService,
+    private readonly userService: UserService, private readonly router: Router,
+    private readonly translateService: TranslateService,
+    private readonly matSnackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.route.data.subscribe((data : any) => {
+      this.primeOffers = data.primeOffersList;
+    })
   }
 
+  optPrimeOffers() {
+    this.authService.saveUserPrime();
+    this.userService.userPrimeStatusUpdation(this.authService.getUserId());
+    this.openSnackBar(this.translateService.instant('TAKE_PRIME.SUCCESSFULL'),
+      '', "success-style");
+    this.router.navigateByUrl('/shows');
+  }
+  openSnackBar(message: string, action: string, style: string): void {
+    this.matSnackBar.open(message, action, {
+      duration: 3000,
+      panelClass: [style],
+      verticalPosition: "top",
+      horizontalPosition: "right"
+    });
+  }
 }

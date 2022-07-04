@@ -12,20 +12,34 @@ export class UserService {
   userList = new BehaviorSubject<User[]>([]);
 
   constructor(private readonly http: HttpClient) {
-    this.getAllUsers();
+    this.getAllUsers().subscribe(users => {
+      this.userList.next(users as User[]);
+    })
    }
 
   public getAllUsers(): Observable<User[]> {
     const url = `${this.USER_SERVICE_BASE_URL}/user.json`;
-    this.http.get<User[]>(url).subscribe(users => {
-      this.userList.next(users as User[]);
-    });
+    return this.http.get<User[]>(url);
+  }
+
+  public getUsers(): Observable<User[]>{
     return this.userList.asObservable();
   }
 
   public getUserDetail(userName: string, password: string): Observable<User> {
-    return this.getAllUsers().pipe(map(data => data.filter(x => x.userName === userName
+    return this.getUsers().pipe(map(data => data.filter(x => x.userName === userName
       && x.pwd === password)[0]));
+  }
+
+  public userPrimeStatusUpdation(userId: string) {
+    const userList = this.userList.getValue();
+    const index = this.findIndexInfoUser(userList, userId);
+    userList[index].isPrimeMember = true;
+    this.userList.next(userList);
+  }
+
+  public findIndexInfoUser(userList: User[], userId: string): number {
+    return userList.findIndex((obj => obj.userId === userId));
   }
 
   public addUser(user: User): Observable<string> {

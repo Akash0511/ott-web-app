@@ -21,7 +21,21 @@
                 </div>
             </li>
             <app-category (showCategory)="renderShowByCategory($event)"></app-category>
-
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/user/get-prime']">{{ 'HEADER.PRIME' | translate }} </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLoggedIn">
+                <a class="nav-link" [routerLink]="['/user/my-favourites']">{{ 'HEADER.MY_FAV_SHOWS' | translate }} </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLoggedIn">
+                <a class="nav-link" [routerLink]="['/user/my-watched']">{{ 'HEADER.MY_WATCHED_SHOWS' | translate }} </a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdmin">
+                <a class="nav-link" [routerLink]="['/admin/add-show']">{{ 'HEADER.ADD_SHOW' | translate }} </a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdmin">
+                <a class="nav-link" [routerLink]="['/admin/add-prime-offers']">{{ 'HEADER.ADD_PRIME' | translate }} </a>
+            </li>
         </ul>
         <app-search-shows (searchText)="searchTextHandler($event)"></app-search-shows>
         &nbsp;&nbsp;

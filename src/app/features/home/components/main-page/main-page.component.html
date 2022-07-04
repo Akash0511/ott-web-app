@@ -1,6 +1,6 @@
 <div class="card-group">
     <mat-card class="example-card" *ngFor="let show of shows | paginate: { id: 'grid_pagination',
-    itemsPerPage: 6,
+    itemsPerPage: 8,
     currentPage: page,
     totalItems: total }">
         <app-generate-shows [showInfo]="show"></app-generate-shows>

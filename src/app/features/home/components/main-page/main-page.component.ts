@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Show } from 'src/app/core/interfaces/show.model';
+import { FavouriteShowsService } from 'src/app/core/services/favourite-shows/favourite-shows.service';
 import { ShowsService } from 'src/app/core/services/shows/shows.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class MainPageComponent implements OnInit {
   total!: number;
 
   constructor(private readonly route: ActivatedRoute,
-    private readonly showService: ShowsService) { }
+    private readonly showService: ShowsService,
+    private readonly favShowsService: FavouriteShowsService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe((response: any) => {

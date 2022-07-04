@@ -10,6 +10,15 @@
             },
             {
                 "name": "Comedy"
+            },
+            {
+                "name": "Drama"
+            },
+            {
+                "name": "Adventure"
+            },
+            {
+                "name": "Biography"
             }
         ]
     },
