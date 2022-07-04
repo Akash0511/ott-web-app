@@ -14,12 +14,16 @@ export class MainPageComponent implements OnInit {
   page = 1;
   total!: number;
 
-  constructor(private readonly route: ActivatedRoute) { }
+  constructor(private readonly route: ActivatedRoute,
+    private readonly showService: ShowsService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe((response: any) => {
       this.shows = response.showsList;
     });
+    this.showService.getShows().subscribe(data => {
+      this.shows = data;
+    })
   }
 
 }

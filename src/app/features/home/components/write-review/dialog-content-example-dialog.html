@@ -1,0 +1,13 @@
+<br />
+<div mat-dialog-content>
+    <h4>{{ 'WRITE_REVIEW.REVIEW_TITLE' | translate }}</h4>
+    <br />
+    <mat-form-field appearance="fill" style="width: -webkit-fill-available;">
+        <mat-label>{{ 'WRITE_REVIEW.REVIEW' | translate }}</mat-label>
+        <input matInput [(ngModel)]="data.review">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions style="align-items:flex-end; float: right; ">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.review" [disabled]="data.review === ''" cdkFocusInitial>Ok</button>
+</div>

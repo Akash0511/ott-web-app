@@ -1,1 +1,12 @@
-<p>reviews works!</p>
+<div *ngIf="showReviews.length > 0">
+    <ul class="list-unstyled">
+        <li>{{ 'HOME.REVIEW' | translate }}
+            <ul *ngFor="let review of showReviews" class="ul-data">
+                <li>{{review}}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div *ngIf="showReviews.length === 0">
+    <p>{{'HOME.REVIEW_NOT_FOUND' | translate}}</p>
+</div>

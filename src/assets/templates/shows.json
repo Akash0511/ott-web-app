@@ -4,21 +4,28 @@
         "name": "RRR",
         "title": "RRR (Rise Roar Revolt)",
         "description": "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in 1920s",
-        "language": "Hindi",
+        "language": "Bollywood",
         "genre": "Action",
         "imdbRating": 5,
         "imgUrl": "/assets/images/shows/RRR.png",
-        "isAvailableOnPrime": false
+        "isAvailableOnPrime": false,
+        "showReviews": [
+            "Awesome show",
+            "Amazing content"
+        ]
     },
     {
         "id": "2",
         "name": "Thor",
         "title": "Thor: Love and Thunder",
         "description": "Thor enlists the help of Valkyrie, Korg and e/x-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
-        "language": "English",
+        "language": "Hollywood",
         "genre": "Action",
         "imdbRating": 4,
         "imgUrl": "/assets/images/shows/Thor.png",
-        "isAvailableOnPrime": true
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Best graphics I have ever seen"
+        ]
     }
 ]

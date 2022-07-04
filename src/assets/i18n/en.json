@@ -1,4 +1,13 @@
 {
+  "HOME": {
+    "REVIEW": "Review",
+    "REVIEW_NOT_FOUND": "Review not found!!!",
+    "GENRE": "Genre",
+    "LANGUAGE": "Language",
+    "MARK_FAVOURITE": "Add to Favourite",
+    "VIEW_FAV_SHOWS": "Your Favourite Shows"
+
+  },
   "HEADER": {
     "TITLE": "Ecommerce-App",
     "HOME": "Home",
@@ -86,5 +95,10 @@
     "PRICE": "Price",
     "ADD": "Add Offer",
     "PACKAGE_ADDED_SUCCESSFULLY": "Offer data added successfully."
+  },
+  "WRITE_REVIEW":{
+    "REVIEW_TITLE": "Please provide your valuable feedback",
+    "REVIEW": "Enter Review",
+    "REVIEW_REQUIRED": "Please enter review"
   }
 }

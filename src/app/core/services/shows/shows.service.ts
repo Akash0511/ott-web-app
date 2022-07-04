@@ -73,4 +73,15 @@ export class ShowsService {
     const url = `${this.SHOW_SERVICE_BASE_URL}/show-category.json`;
     return this.http.get<Category[]>(url);
   }
+
+  public findShowIndex(showList: Show[], showId: string): number {
+    return showList.findIndex((obj => obj.id === showId));
+  }
+
+  public addShowReview(showId: string, review: string): void {
+    const showList = this.showsList.getValue();
+    const movieIndex = this.findShowIndex(showList, showId);
+    showList[movieIndex].showReviews.push(review);
+    this.showsList.next(showList);
+  }
 }

@@ -7,5 +7,6 @@ export interface Show {
     genre: string,
     imdbRating: number,
     imgUrl: string,
-    isAvailableOnPrime: boolean
+    isAvailableOnPrime: boolean,
+    showReviews: string[]
 }

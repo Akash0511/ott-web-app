@@ -1,1 +1,37 @@
-<p>shows-detail-page works!</p>
+<div class="card mb-3">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img width="340" height="500px" src={{show.imgUrl}} alt="Photo of a Show"
+                style="border-radius: 15px;">
+        </div>
+        <div class="col-md-8 details">
+            <div class="card-body">
+                <h4 class="card-title">{{show.name}}</h4>
+                <div class="priceRating">
+                    <h3>{{show.title}}</h3>
+                    <app-imdb-rating [imdbRating]="show.imdbRating" class="ratings"></app-imdb-rating>
+                </div>
+                <div class="productQuantity">
+                    <h3>{{ 'HOME.GENRE' | translate }} {{show.genre}}</h3>
+                </div>
+                <div class="productQuantity">
+                    <h3>{{ 'HOME.LANGUAGE' | translate }} {{show.language}}</h3>
+                </div>
+                <p class="card-text">{{show.description}}</p>
+                <app-reviews [showReviews]="show.showReviews"></app-reviews>
+            </div>
+            <mat-card-actions class="addCartButton">
+                <button class="btn btn-info cartButton" mat-button (click)="markShowAsFav(show.id)" *ngIf="!(markShowAsFavourite)">
+                    <mat-icon>add_shopping_cart</mat-icon>{{ 'HOME.MARK_FAVOURITE' | translate }}
+                </button>
+                <button class="btn btn-success cartButton" mat-button (click)="viewFavShows()" *ngIf="markShowAsFavourite">
+                    <mat-icon>add_shopping_cart</mat-icon>{{ 'HOME.VIEW_FAV_SHOWS' | translate }}
+                </button>
+                <button class="btn btn-info" mat-button [routerLink]="['/shows']">
+                    <mat-icon>home</mat-icon>{{ 'SIGNUP.CANCEL' | translate }}
+                </button>
+                <app-write-review [showId]="show.id"></app-write-review>
+            </mat-card-actions>
+        </div>
+    </div>
+</div>
