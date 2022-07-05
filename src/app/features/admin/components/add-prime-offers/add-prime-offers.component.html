@@ -16,10 +16,6 @@
                             *ngIf="primeNameControl.touched && primeNameControl.errors?.['minlength']">
                             {{ 'ADD_PRIME_OFFER.MIN_LENGTH' | translate }}
                         </div>
-                        <div class="invalid-feedback"
-                            *ngIf="primeNameControl.touched && primeNameControl.errors?.['pattern']">
-                            {{ 'ADD_PRIME_OFFER.ONLY_ALPHABETS' | translate }}
-                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="durationInMonths">{{ 'ADD_PRIME_OFFER.DURATION' | translate }}</label>
@@ -57,10 +53,6 @@
                         <textarea id="description" class="form-control" id="description" rows="1"
                             formControlName="description"
                             [ngClass]="getControlValidationClasses(primeDescriptionControl)"></textarea>
-                        <div class="invalid-feedback"
-                            *ngIf="primeDescriptionControl.touched && primeDescriptionControl.errors?.['pattern']">
-                            {{ 'ADD_PRIME_OFFER.ONLY_ALPHABETS' | translate }}
-                        </div>
                     </div>
                 </div>
                 <br>

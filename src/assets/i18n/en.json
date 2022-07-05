@@ -77,7 +77,7 @@
     "NAME": "Name",
     "TITLE": "Title",
     "DESCRIPTION": "Description",
-    "LANGUAGE": "Language",
+    "LANGUAGE": "Industry/Language",
     "GENRE": "Genre",
     "RATING": "IMDB Rating",
     "IS_PRIME": "Available for Prime Users",
@@ -95,6 +95,7 @@
     "SHOW_CREATED_SUCCESSFULLY": "Show data added successfully."
   },
   "ADD_PRIME_OFFER": {
+    "TITLE": "Prime Membership Offers",
     "PRIME_TEXT": "Add Prime Offer Details",
     "NAME": "Offer Name",
     "NAME_REQUIRED": "Please enter offer name",

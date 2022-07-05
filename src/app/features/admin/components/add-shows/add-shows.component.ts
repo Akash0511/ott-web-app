@@ -37,7 +37,7 @@ export class AddShowsComponent implements OnInit {
     this.showGenreControl = new FormControl('', [Validators.required]);
     this.showImdbRatingControl = new FormControl('', [Validators.required]);
     this.isAvailableOnPrimeControl = new FormControl('', [Validators.required]);
-    this.showDescriptionControl = new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ,]+')]);
+    this.showDescriptionControl = new FormControl('', [Validators.required]);
 
     this.addShowForm = new FormGroup({
       name: this.showNameControl,
@@ -54,6 +54,8 @@ export class AddShowsComponent implements OnInit {
   onFormSubmit() {
     const newShow: Show = this.addShowForm.value;
     newShow.imgUrl = "/assets/images/show_img.png";
+    newShow.isAvailableOnPrime = (newShow.isAvailableOnPrime.toString() === 'true');
+    newShow.showReviews = [];
     this.showService.addShow(newShow).subscribe(
       data => {
         if (data === 'Show Already Exists.') {

@@ -49,10 +49,6 @@
                             *ngIf="showDescriptionControl.touched && showDescriptionControl.errors?.['required']">
                             {{ 'ADD_SHOW.DESCRIPTION_REQUIRED' | translate }}
                         </div>
-                        <div class="invalid-feedback"
-                            *ngIf="showDescriptionControl.touched && showDescriptionControl.errors?.['pattern']">
-                            {{ 'ADD_SHOW.ONLY_ALPHABETS' | translate }}
-                        </div>
                     </div>
                 </div>
                 <div class="form-row">

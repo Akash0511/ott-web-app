@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { PrimeOffers } from 'src/app/core/interfaces/primeOffers.model';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { PrimeOffersService } from 'src/app/core/services/prime-offers/prime-offers.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
@@ -19,11 +20,15 @@ export class GetPrimeMembershipComponent implements OnInit {
     private readonly authService: AuthService,
     private readonly userService: UserService, private readonly router: Router,
     private readonly translateService: TranslateService,
-    private readonly matSnackBar: MatSnackBar) { }
+    private readonly matSnackBar: MatSnackBar,
+    private readonly primeOfferService: PrimeOffersService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe((data : any) => {
       this.primeOffers = data.primeOffersList;
+    });
+    this.primeOfferService.getPrimeOffers().subscribe(data =>{
+      this.primeOffers = data;
     })
   }
 

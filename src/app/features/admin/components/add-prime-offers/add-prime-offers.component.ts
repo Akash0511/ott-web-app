@@ -26,11 +26,10 @@ export class AddPrimeOffersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.primeNameControl = new FormControl('', [Validators.required, Validators.minLength(3),
-    Validators.pattern('[a-zA-Z ,]+')]);
+    this.primeNameControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
     this.primeDurationControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]);
     this.primePriceControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]);
-    this.primeDescriptionControl = new FormControl('', [Validators.pattern('[a-zA-Z0-9 ,]+')]);
+    this.primeDescriptionControl = new FormControl('', []);
 
     this.addPrimeOfferForm = new FormGroup({
       name: this.primeNameControl,
@@ -45,7 +44,7 @@ export class AddPrimeOffersComponent implements OnInit {
     const newOffer: PrimeOffers = this.addPrimeOfferForm.value;
     this.primeOffersService.addPrimeOffers(newOffer).subscribe(
       data => {
-        this.openSnackBar(this.translateService.instant('ADD_PRIME_OFFER.OFFER_ADDED_SUCCESSFULLY'),
+        this.openSnackBar(this.translateService.instant('ADD_PRIME_OFFER.PACKAGE_ADDED_SUCCESSFULLY'),
           '', "success-style");
         this.router.navigateByUrl('/shows');
       });
