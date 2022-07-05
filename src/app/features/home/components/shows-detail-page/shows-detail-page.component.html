@@ -1,37 +1,50 @@
-<div class="card mb-3">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img width="340" height="500px" src={{show.imgUrl}} alt="Photo of a Show"
-                style="border-radius: 15px;">
-        </div>
-        <div class="col-md-8 details">
-            <div class="card-body">
-                <h4 class="card-title">{{show.name}}</h4>
-                <div class="priceRating">
-                    <h3>{{show.title}}</h3>
-                    <app-imdb-rating [imdbRating]="show.imdbRating" class="ratings"></app-imdb-rating>
-                </div>
-                <div class="productQuantity">
-                    <h3>{{ 'HOME.GENRE' | translate }} {{show.genre}}</h3>
-                </div>
-                <div class="productQuantity">
-                    <h3>{{ 'HOME.LANGUAGE' | translate }} {{show.language}}</h3>
-                </div>
-                <p class="card-text">{{show.description}}</p>
-                <app-reviews [showReviews]="show.showReviews"></app-reviews>
+<div class="card div-data">
+    <div class="mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img width="400px" height="600px" src={{show.imgUrl}} class="img-fluid rounded-start"
+                    alt="Photo of a Show">
             </div>
-            <mat-card-actions class="addCartButton">
-                <button class="btn btn-info cartButton" mat-button (click)="markShowAsFav(show.id)" *ngIf="!(markShowAsFavourite)">
-                    <mat-icon>add_shopping_cart</mat-icon>{{ 'HOME.MARK_FAVOURITE' | translate }}
-                </button>
-                <button class="btn btn-success cartButton" mat-button (click)="viewFavShows()" *ngIf="markShowAsFavourite">
-                    <mat-icon>add_shopping_cart</mat-icon>{{ 'HOME.VIEW_FAV_SHOWS' | translate }}
-                </button>
-                <button class="btn btn-info" mat-button [routerLink]="['/shows']">
-                    <mat-icon>home</mat-icon>{{ 'SIGNUP.CANCEL' | translate }}
-                </button>
-                <app-write-review [showId]="show.id"></app-write-review>
-            </mat-card-actions>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{show.name}}</h5>
+                    <div class="priceRating">
+                        <h3>{{show.title}}</h3>
+                        <app-imdb-rating [imdbRating]="show.imdbRating" class="ratings"></app-imdb-rating>
+                    </div>
+                    <div class="productQuantity">
+                        <h3>{{ 'HOME.GENRE' | translate }} {{show.genre}}</h3>
+                    </div>
+                    <div class="productQuantity">
+                        <h3>{{ 'HOME.LANGUAGE' | translate }} {{show.language}}</h3>
+                    </div>
+                    <p class="card-text">{{show.description}}</p>
+                    <app-reviews [showReviews]="show.showReviews"></app-reviews>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    <mat-card-actions class="addCartButton">
+                        <button mat-raised-button class="fav" (click)="markShowAsFav(show.id)"
+                            *ngIf="!(markShowAsFavourite)">
+                            <mat-icon>favorite_border</mat-icon>{{ 'HOME.MARK_FAVOURITE' | translate }}
+                        </button>
+                        <button class="btn btn-success cartButton" mat-button (click)="viewFavShows()"
+                            *ngIf="markShowAsFavourite">
+                            <mat-icon>favorite</mat-icon>{{ 'HOME.VIEW_FAV_SHOWS' | translate }}
+                        </button>
+                        <button mat-raised-button (click)="addShowToWatchList(show.id)"
+                            *ngIf="showWatchButton && !(markShowAsWatched)">
+                            <mat-icon>visibility</mat-icon>{{ 'HOME.MARK_WATCHED' | translate }}
+                        </button>
+                        <button class="btn btn-success cartButton" mat-button (click)="viewWatchedShows()"
+                            *ngIf="markShowAsWatched">
+                            <mat-icon>visibility_off</mat-icon>{{ 'HOME.VIEW_WATCHED_SHOWS' | translate }}
+                        </button>
+                        <button mat-raised-button class="cancel" [routerLink]="['/shows']">
+                            <mat-icon>home</mat-icon>{{ 'SIGNUP.CANCEL' | translate }}
+                        </button>
+                        <app-write-review [showId]="show.id" *ngIf="markShowAsWatched"></app-write-review>
+                    </mat-card-actions>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,39 +1,19 @@
-.card {
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 2px;
+.div-data {
+    width: 70%;
     margin: 0 auto;
-    margin-top: 30px;
-    width: 1000px;
-    height: 560px;
+    margin-top: 20px;
+}
+.card {
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 2rem;
 }
 
-.card-title {
-    font-weight: bold;
+.cancel{
+    background-color: rgb(181, 79, 79);
 }
 
-.details {
-    height: 600px;
-}
-
-.addCartButton {
-    margin-left: 130px;
-}
-
-.cartButton {
-    margin-right: 5px;
-}
-
-.priceRating {
-    display: flex;
-    justify-content: space-between;
-}
-
-.productQuantity {
-    display: flex;
-    justify-content: left;
-}
-
-.ratings {
-    margin-right: 200px;
+.fav{
+    background-color: rgb(202, 114, 129);
 }

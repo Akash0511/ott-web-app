@@ -26,7 +26,9 @@ export class WriteReviewComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.showService.addShowReview(this.showId, result);
+      if(result !== ''){
+        this.showService.addShowReview(this.showId, result);
+      }
     });
   }
 }
@@ -41,9 +43,5 @@ export class DialogContentExampleDialog implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 }

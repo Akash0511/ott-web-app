@@ -8,6 +8,6 @@
     </mat-form-field>
 </div>
 <div mat-dialog-actions style="align-items:flex-end; float: right; ">
-    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.review">Cancel</button>
     <button mat-button [mat-dialog-close]="data.review" [disabled]="data.review === ''" cdkFocusInitial>Ok</button>
 </div>

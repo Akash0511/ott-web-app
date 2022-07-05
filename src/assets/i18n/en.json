@@ -5,7 +5,15 @@
     "GENRE": "Genre",
     "LANGUAGE": "Language",
     "MARK_FAVOURITE": "Add to Favourite",
-    "VIEW_FAV_SHOWS": "Your Favourite Shows"
+    "VIEW_FAV_SHOWS": "Your Favourite Shows",
+    "MY_FAV_SHOWS": "My Favourite Shows",
+    "MY_WATCHED_SHOWS": "My Watched Shows",
+    "MARK_WATCHED": "Watch",
+    "VIEW_WATCHED_SHOWS":"Watched",
+    "NO_WATCHED_SHOW_FOUND": "You have not watched any show yet!!!",
+    "NO_FAV_SHOW_FOUND": "You have not added any favourite show/movie",
+    "CONTINUE_BROWSING": "Continue browsing...",
+    "MARKED_SHOW_AS_FAVORITE": "Favourite marked successfully!!!"
   },
   "HEADER": {
     "TITLE": "OTT-App",
@@ -103,7 +111,8 @@
   "WRITE_REVIEW":{
     "REVIEW_TITLE": "Please provide your valuable feedback",
     "REVIEW": "Enter Review",
-    "REVIEW_REQUIRED": "Please enter review"
+    "REVIEW_REQUIRED": "Please enter review",
+    "WRITE_REVIEW": "Write Review"
   },
   "TAKE_PRIME":{
     "TITLE": "Prime Membership Offers",

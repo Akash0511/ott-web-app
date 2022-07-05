@@ -1,0 +1,35 @@
+.div-data {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgb(214, 235, 235);
+}
+.card {
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.remove {
+    float: right;
+    font-weight: 600;
+}
+
+.title {
+    float: left;
+    font-weight: 600;
+}
+
+.remove-icon {
+    display: inline-block;
+    width: 100%;
+}
+
+h4{
+    text-align: center;
+}
+
+.extra{
+    text-align: center;
+}

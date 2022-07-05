@@ -48,7 +48,7 @@ export class FavouriteShowsService {
     return of('Favourite show added!!');
   }
 
-  markShowAsWatched(dataObj: FavouriteShows): void {
+  markShowAsWatched(dataObj: FavouriteShows): Observable<string> {
     const favWatchedList = this.favWatchedShowsList.getValue();
     let response = this.getUserFavShowIndex(dataObj.userId, dataObj.showId);
     if (response !== -1) {
@@ -57,6 +57,7 @@ export class FavouriteShowsService {
       favWatchedList.push(dataObj);
     }
     this.favWatchedShowsList.next(favWatchedList);
+    return of('');
   }
 
   getUserFavouriteShows(userId: string): Observable<Show[]> {
