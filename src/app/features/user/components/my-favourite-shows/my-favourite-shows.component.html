@@ -1,6 +1,7 @@
 <div class="card div-data" *ngIf="myFavShows.length > 0">
     <h4>{{ 'HOME.MY_FAV_SHOWS' | translate }}</h4>
-    <div class="card mb-3" *ngFor="let show of myFavShows;let i = index">
+    <div class="card mb-3" *ngFor="let show of myFavShows;let i = index"
+    (click)="viewShowDetailPage(show.id)">
         <div class="row g-0">
             <div class="col-md-2">
                 <img width="90%" height="100%" src="{{show.imgUrl}}" class="img-fluid rounded-start"
@@ -26,7 +27,7 @@
         </div>
     </div>
 </div>
-<div class="show-page-content extra" *ngIf="myFavShows.length == 0">
+<div class="show-page-content extra" *ngIf="myFavShows.length === 0">
     <h4>{{ 'HOME.NO_FAV_SHOW_FOUND' | translate }}</h4>
     <a routerLink="/">{{ 'HOME.CONTINUE_BROWSING' | translate }}</a>
 </div>

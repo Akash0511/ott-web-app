@@ -1,6 +1,4 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ShowsService } from 'src/app/core/services/shows/shows.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -20,7 +18,7 @@ export class WriteReviewComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog, {
+    const dialogRef = this.dialog.open(AppDialogContentExampleDialogComponent, {
       width: '40%',
       data: { showId: this.showId, review: '' }
     });
@@ -34,10 +32,10 @@ export class WriteReviewComponent implements OnInit {
 }
 
 @Component({
-  selector: 'dialog-content-example-dialog',
+  selector: 'app-dialog-content-example-dialog',
   templateUrl: 'dialog-content-example-dialog.html',
 })
-export class DialogContentExampleDialog implements OnInit {
+export class AppDialogContentExampleDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<WriteReviewComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

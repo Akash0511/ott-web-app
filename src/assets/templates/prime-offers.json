@@ -1,17 +1,17 @@
 [
     {
         "id":"1",
-        "name":"Premium",
+        "name":"Premium 3 months plan",
         "price": 399,
         "durationInMonths": 3,
-        "description": "Exclusive Originals & International Movies"
+        "description": "You can watch any shows and movies"
     },
     {
         "id":"2",
-        "name":"Super",
+        "name":"Super month",
         "price": 199,
         "durationInMonths": 1,
-        "description": "Exclusive Originals & International Movies"
+        "description": "Enjoy the first day first show"
     },
     {
         "id":"3",
@@ -19,5 +19,12 @@
         "price": 299,
         "durationInMonths": 1,
         "description": "Exclusive Originals & International Movies"
+    },
+    {
+        "id":"1",
+        "name":"Premium Top",
+        "price": 1999,
+        "durationInMonths": 12,
+        "description": "Enjoy Hollywood & Bollywood movies"
     }
 ]

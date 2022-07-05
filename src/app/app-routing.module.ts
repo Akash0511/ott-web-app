@@ -23,12 +23,12 @@ const routes: Routes = [
       {
         path: 'user',
         loadChildren: () => import('./features/user/user.module').then(m => m.UserModule)
+      },
+      {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       }
     ]
-  },
-  {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '**',

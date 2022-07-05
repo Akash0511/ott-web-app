@@ -1,20 +1,20 @@
 [
     {
-        "userId": "2",
-        "showId": "1",
+        "userId": "1",
+        "showId": "2",
         "isMarkedAsFavorite": true,
+        "isMarkedAsWatched": true
+    },
+    {
+        "userId": "3",
+        "showId": "4",
+        "isMarkedAsFavorite": false,
         "isMarkedAsWatched": false
     },
     {
         "userId": "2",
-        "showId": "2",
+        "showId": "7",
         "isMarkedAsFavorite": false,
-        "isMarkedAsWatched": true
-    },
-    {
-        "userId": "1",
-        "showId": "2",
-        "isMarkedAsFavorite": true,
         "isMarkedAsWatched": true
     },
     {

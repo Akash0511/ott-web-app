@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Show } from 'src/app/core/interfaces/show.model';
 
 @Component({
@@ -11,12 +11,16 @@ export class MyWatchedShowsComponent implements OnInit {
 
   myWatchedShowList! : Show[];
 
-  constructor(private readonly route: ActivatedRoute) { }
+  constructor(private readonly route: ActivatedRoute,
+    private readonly router: Router) { }
 
   ngOnInit(): void {
     this.route.data.subscribe((data :  any)=>{
       this.myWatchedShowList = data.myWatchedShowsList;
-      console.log( this.myWatchedShowList);
     });
+  }
+
+  viewShowDetailPage(showId: string): void{
+    this.router.navigateByUrl('/shows/'+ showId);
   }
 }

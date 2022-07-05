@@ -53,6 +53,7 @@ export class AddShowsComponent implements OnInit {
 
   onFormSubmit() {
     const newShow: Show = this.addShowForm.value;
+    newShow.imgUrl = "/assets/images/show_img.png";
     this.showService.addShow(newShow).subscribe(
       data => {
         if (data === 'Show Already Exists.') {

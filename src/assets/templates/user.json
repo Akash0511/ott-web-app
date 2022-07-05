@@ -4,18 +4,18 @@
         "firstName": "Akash",
         "lastName": "Bhardwaj",
         "userName": "akash@nagarro.com",
-        "phone": "9834125612",
-        "pwd": "abc123",
+        "phone": "9717488657",
+        "pwd": "abc@123",
         "role": "admin",
         "isPrimeMember": true
     },
     {
         "userId": "2",
         "firstName": "Arun",
-        "lastName": "Goyal",
+        "lastName": "Tripathi",
         "userName": "arun@nagarro.com",
         "phoneNumber": "9934125612",
-        "pwd": "abc123",
+        "pwd": "user@123",
         "role": "user",
         "isPrimeMember": true
     },
@@ -25,7 +25,7 @@
         "lastName": "Garg",
         "userName": "ravi@nagarro.com",
         "phoneNumber": "8834125612",
-        "pwd": "abc123",
+        "pwd": "user@123",
         "role": "user",
         "isPrimeMember": false
     }

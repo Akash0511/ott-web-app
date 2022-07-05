@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +6,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ott-web-app';
 
   language = '';
 
-  constructor(
-
-    public readonly translate: TranslateService) {
-    translate.addLangs(['en', 'hn']);
-    translate.setDefaultLang('en');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang!.match(/en|hn/) ? browserLang! : 'en');
+  constructor() {
   }
 }

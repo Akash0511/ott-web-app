@@ -6,6 +6,10 @@ import { LoginDetails } from 'src/app/core/interfaces/loginDetails.model';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MaintainStateService } from 'src/app/core/services/maintain-state/maintain-state.service';
+import { FavouriteShows } from 'src/app/core/interfaces/favourite.model';
+import { StateData } from 'src/app/core/interfaces/state-data.model';
+import { FavouriteShowsService } from 'src/app/core/services/favourite-shows/favourite-shows.service';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +32,9 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private readonly userService: UserService,
     private readonly translateService: TranslateService,
-    private readonly matSnackBar: MatSnackBar) { }
+    private readonly matSnackBar: MatSnackBar,
+    private readonly favShowService: FavouriteShowsService,
+    private readonly maintainStateService: MaintainStateService) { }
 
   imgUrl = '../../../../assets/images/loginLogo.png';
 
@@ -48,7 +54,22 @@ export class LoginComponent implements OnInit {
     this.userService.getUserDetail(user.email, user.password).subscribe(response => {
       if (response !== undefined) {
         this.authService.logIn(response).subscribe(resp => {
-          this.router.navigateByUrl('/shows');
+          const navResp = this.maintainStateService.getStateAction();
+          if (navResp.navigationUrl !== '' && navResp.showId !== '') {
+            if (navResp.markShowAsWatched) {
+              this.favShowService.markShowAsWatched(this.getFavOrWatchedObj(navResp)).subscribe(resp => {
+                this.router.navigateByUrl(navResp.navigationUrl);
+                this.maintainStateService.resetStateAction();
+              });
+            } else {
+              this.favShowService.markShowAsFav(this.getFavOrWatchedObj(navResp)).subscribe(resp => {
+                this.router.navigateByUrl(navResp.navigationUrl);
+                this.maintainStateService.resetStateAction();
+              });
+            }
+          } else {
+            this.router.navigateByUrl('/movies');
+          }
         });
       } else {
         this.showSnackBar(this.translateService.instant('LOGIN.INVALID_CREDENTIAL_MESSAGE'),
@@ -63,6 +84,20 @@ export class LoginComponent implements OnInit {
       'is-invalid': control.touched && control.invalid,
       'is-valid': control.touched && control.valid
     };
+  }
+
+  getFavOrWatchedObj(resp: StateData): FavouriteShows {
+    return resp.markShowAsWatched ? {
+      userId: this.authService.getUserId(),
+      showId: resp.showId,
+      isMarkedAsFavorite: false,
+      isMarkedAsWatched: true
+    } : {
+      userId: this.authService.getUserId(),
+      showId: resp.showId,
+      isMarkedAsFavorite: true,
+      isMarkedAsWatched: false
+    }
   }
 
   showSnackBar(message: string, action: string, style: string): void {

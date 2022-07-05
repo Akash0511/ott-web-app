@@ -8,7 +8,7 @@ import { GenerateShowsComponent } from './components/generate-shows/generate-sho
 import { ShowsDetailPageComponent } from './components/shows-detail-page/shows-detail-page.component';
 import { ImdbRatingComponent } from './components/imdb-rating/imdb-rating.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { DialogContentExampleDialog, WriteReviewComponent } from './components/write-review/write-review.component';
+import { AppDialogContentExampleDialogComponent, WriteReviewComponent } from './components/write-review/write-review.component';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 
@@ -19,7 +19,7 @@ const components = [
   ShowsDetailPageComponent,
   ImdbRatingComponent,
   WriteReviewComponent,
-  DialogContentExampleDialog
+  AppDialogContentExampleDialogComponent
 ]
 
 @NgModule({

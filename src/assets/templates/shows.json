@@ -1,40 +1,27 @@
 [
     {
         "id": "1",
-        "name": "Atal",
-        "title": "Atal ‘The Untold Vajpayee: Politician and Paradox’",
-        "description": "Atal Bihari Vajpayee’s life painted on the silver screen as a movie on the former Prime Minister of India has been announced. Titled, ‘Main RahoonYa Na Rahoon, Yeh Desh Rehna Chahiye – Atal’, this movie is an adaptation of Ullekh NP’s book ‘The Untold Vajpayee: Politician and Paradox’.",
-        "language": "Bollywood",
-        "genre": "Drama",
-        "imdbRating": 4,
-        "imgUrl": "/assets/images/shows/Atal.jpg",
-        "isAvailableOnPrime": true,
-        "showReviews": [
-            "Best graphics I have ever seen"
-        ]
-    },
-    {
-        "id": "2",
         "name": "Rashtra Kavach OM",
         "title": "Rashtra Kavach OM",
         "description": "Rashtra Kavach Om is a 2022 Indian Hindi-language action thriller film directed by Kapil Verma and produced by Zee Studios and Ahmed Khan. It stars Aditya Roy Kapur, Sanjana Sanghi, Jackie Shroff, Ashutosh Rana, Prakash Raj and Prachee Shah Paandya",
         "language": "Bollywood",
         "genre": "Action",
-        "imdbRating": 4,
+        "imdbRating": 3.5,
         "imgUrl": "/assets/images/shows/Rashtra-Kavach.jpg",
         "isAvailableOnPrime": true,
         "showReviews": [
-            "Best graphics I have ever seen"
+            "Nice",
+            "wait to watch"
         ]
     },
     {
-        "id": "3",
+        "id": "2",
         "name": "Brahmastra ",
         "title": "Brahmastra Part One",
         "description": "This is the story of Shiva who sets out in search of love and self-discovery. During his journey, he has to face many evil forces that threaten our existence.",
         "language": "Bollywood",
         "genre": "Adventure",
-        "imdbRating": 4,
+        "imdbRating": 4.5,
         "imgUrl": "/assets/images/shows/Brahmastra.jpg",
         "isAvailableOnPrime": true,
         "showReviews": [
@@ -42,31 +29,45 @@
         ]
     },
     {
-        "id": "4",
+        "id": "3",
         "name": "Bhool Bhulaiyaa 2",
         "title": "Bhool Bhulaiyaa 2",
         "description": "An accidental, yet destined meet up between two strangers Ruhaan and Reet, ends up with them visiting Reet's home town in Rajasthan. Fate leads them to opening up an old secret due to which all hell breaks loose leading to one lie and their tragedy keeps becoming our comedy.",
         "language": "Bollywood",
         "genre": "Comedy",
-        "imdbRating": 4,
+        "imdbRating": 2,
         "imgUrl": "/assets/images/shows/Bhool-Bhulaiyaa-2.jpeg",
-        "isAvailableOnPrime": true,
+        "isAvailableOnPrime": false,
         "showReviews": [
-            "Best graphics I have ever seen"
+            "Not up to mark."
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Atal",
+        "title": "Atal ‘The Untold Vajpayee: Politician and Paradox’",
+        "description": "Atal Bihari Vajpayee’s life painted on the silver screen as a movie on the former Prime Minister of India has been announced. Titled, ‘Main RahoonYa Na Rahoon, Yeh Desh Rehna Chahiye – Atal’, this movie is an adaptation of Ullekh NP’s book ‘The Untold Vajpayee: Politician and Paradox’.",
+        "language": "Bollywood",
+        "genre": "Drama",
+        "imdbRating": 3,
+        "imgUrl": "/assets/images/shows/Atal.jpg",
+        "isAvailableOnPrime": false,
+        "showReviews": [
+            "Inspirational"
         ]
     },
     {
         "id": "5",
-        "name": "Bhool Bhulaiyaa 2",
-        "title": "Bhool Bhulaiyaa 2",
-        "description": "An accidental, yet destined meet up between two strangers Ruhaan and Reet, ends up with them visiting Reet's home town in Rajasthan. Fate leads them to opening up an old secret due to which all hell breaks loose leading to one lie and their tragedy keeps becoming our comedy.",
-        "language": "Bollywood",
-        "genre": "Comedy",
+        "name": "Game of Thrones",
+        "title": "Game of Thrones",
+        "description": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
+        "language": "Hollywood",
+        "genre": "Action, Adventure, Drama",
         "imdbRating": 4,
-        "imgUrl": "/assets/images/shows/Bhool-Bhulaiyaa-2.jpeg",
-        "isAvailableOnPrime": true,
+        "imgUrl": "/assets/images/shows/GOT.jpg",
+        "isAvailableOnPrime": false,
         "showReviews": [
-            "Best graphics I have ever seen"
+            "I was reluctantly dragged into the theater, thinking that they didn't need to make a GOT and that the first one was where that story needed to end."
         ]
     },
     {
@@ -76,9 +77,9 @@
         "description": "Based on the life of Major Sandeep Unnikrishnan, who was martyred in action during the November 2008 Mumbai attacks and was consequently awarded the Ashoka Chakra, India's highest peacetime gallantry award, on 26 January 2009.",
         "language": "Bollywood",
         "genre": "Biography",
-        "imdbRating": 4,
+        "imdbRating": 3,
         "imgUrl": "/assets/images/shows/Major.jpg",
-        "isAvailableOnPrime": true,
+        "isAvailableOnPrime": false,
         "showReviews": [
             "Best graphics I have ever seen"
         ]
@@ -124,6 +125,48 @@
         "isAvailableOnPrime": true,
         "showReviews": [
             "Best graphics I have ever seen"
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Top Gun",
+        "title": "Top Gun: Maverick",
+        "description": "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
+        "language": "Hollywood",
+        "genre": "Action, Drama",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/top-gun.png",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "I could write a couple paragraphs to summarize my feelings after walking out of the theater, but I'm going to leave it with just one sentence."
+        ]
+    },
+    {
+        "id": "11",
+        "name": "Jurassic World",
+        "title": "Jurassic World Dominion",
+        "description": "Four years after the destruction of Isla Nublar, dinosaurs now live--and hunt--alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history's most fearsome creatures in a new Era.",
+        "language": "Hollywood",
+        "genre": "Action, Adventure, Sci-Fi",
+        "imdbRating": 4,
+        "imgUrl": "/assets/images/shows/jurassic.png",
+        "isAvailableOnPrime": true,
+        "showReviews": [
+            "Love the actors & nostalgia, but hated the story"
+        ]
+    },
+    {
+        "id": "12",
+        "name": "Eddie the Eagle",
+        "title": "Eddie the Eagle",
+        "description": "The story of Eddie Edwards, the notoriously tenacious British underdog ski jumper who charmed the world at the 1988 Winter Olympics.",
+        "language": "Hollywood",
+        "genre": "Adventure, Biography, Comedy",
+        "imdbRating": 5,
+        "imgUrl": "/assets/images/shows/eddie-eagle.png",
+        "isAvailableOnPrime": false,
+        "showReviews": [
+            "This is one of those films that you're not going to hear about during award season but it was certainly satisfying and worth the time."
         ]
     }
 ]

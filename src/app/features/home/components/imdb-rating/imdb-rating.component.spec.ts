@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ImdbRatingComponent } from './imdb-rating.component';
 
@@ -8,7 +9,8 @@ describe('ImdbRatingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImdbRatingComponent ]
+      declarations: [ ImdbRatingComponent ],
+      imports: [NgbModule]
     })
     .compileComponents();
 

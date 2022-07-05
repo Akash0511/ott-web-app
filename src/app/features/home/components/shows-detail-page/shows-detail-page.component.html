@@ -7,20 +7,26 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{show.name}}</h5>
+                    <div class="remove-icon">
+                        <h5 class="card-title title">{{show.name}}</h5>
+                        <div class="remove" *ngIf="show.isAvailableOnPrime">
+                            <img width="50px" height="50px" src="/assets/images/primeLogo.png" class="img-fluid rounded-start"
+                                alt="Photo of a Show">
+                        </div>
+                    </div>
                     <div class="priceRating">
                         <h3>{{show.title}}</h3>
                         <app-imdb-rating [imdbRating]="show.imdbRating" class="ratings"></app-imdb-rating>
                     </div>
                     <div class="productQuantity">
-                        <h3>{{ 'HOME.GENRE' | translate }} {{show.genre}}</h3>
+                        <h6><b>{{ 'HOME.GENRE' | translate }}:</b> {{show.genre}}</h6>
                     </div>
                     <div class="productQuantity">
-                        <h3>{{ 'HOME.LANGUAGE' | translate }} {{show.language}}</h3>
+                        <h6><b>{{ 'HOME.LANGUAGE' | translate }}:</b> {{show.language}}</h6>
                     </div>
                     <p class="card-text">{{show.description}}</p>
                     <app-reviews [showReviews]="show.showReviews"></app-reviews>
-                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+
                     <mat-card-actions class="addCartButton">
                         <button mat-raised-button class="fav" (click)="markShowAsFav(show.id)"
                             *ngIf="!(markShowAsFavourite)">
@@ -30,12 +36,11 @@
                             *ngIf="markShowAsFavourite">
                             <mat-icon>favorite</mat-icon>{{ 'HOME.VIEW_FAV_SHOWS' | translate }}
                         </button>
-                        <button mat-raised-button (click)="addShowToWatchList(show.id)"
-                            *ngIf="showWatchButton && !(markShowAsWatched)">
+                        <button mat-button (click)="addShowToWatchList(show.id)" class="watch"
+                            *ngIf="!(markShowAsWatched)" [disabled]="!showWatchButton">
                             <mat-icon>visibility</mat-icon>{{ 'HOME.MARK_WATCHED' | translate }}
                         </button>
-                        <button class="btn btn-success cartButton" mat-button (click)="viewWatchedShows()"
-                            *ngIf="markShowAsWatched">
+                        <button class="watch" mat-button (click)="viewWatchedShows()" *ngIf="markShowAsWatched">
                             <mat-icon>visibility_off</mat-icon>{{ 'HOME.VIEW_WATCHED_SHOWS' | translate }}
                         </button>
                         <button mat-raised-button class="cancel" [routerLink]="['/shows']">

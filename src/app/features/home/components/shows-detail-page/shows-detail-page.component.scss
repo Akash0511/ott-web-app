@@ -17,3 +17,21 @@
 .fav{
     background-color: rgb(202, 114, 129);
 }
+
+.watch{
+    background-color: green;
+}
+
+.remove {
+    float: right;
+}
+
+.title {
+    float: left;
+    font-weight: 600;
+}
+
+.remove-icon {
+    display: inline-block;
+    width: 100%;
+}

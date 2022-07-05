@@ -1,6 +1,6 @@
 <div *ngIf="showReviews.length > 0">
     <ul class="list-unstyled">
-        <li>{{ 'HOME.REVIEW' | translate }}
+        <li><b>{{ 'HOME.REVIEW' | translate }}</b>
             <ul *ngFor="let review of showReviews" class="ul-data">
                 <li>{{review}}</li>
             </ul>

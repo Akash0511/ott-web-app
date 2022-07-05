@@ -67,7 +67,6 @@ export class SignupComponent implements OnInit {
     const newUser = this.signupForm.value as User;
     newUser.role = 'user';
     newUser.isPrimeMember = false;
-    console.log(newUser);
     this.userService.addUser(newUser).subscribe(
       data => {
         if (data === 'User Already Exists.') {

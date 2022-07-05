@@ -21,7 +21,6 @@ export class MyFavouriteShowsComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe((data: any) => {
       this.myFavShows = data.myFavShowsList;
-      console.log(this.myFavShows)
     });
   }
 
