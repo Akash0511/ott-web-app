@@ -30,7 +30,8 @@
     "ADD_SHOW": "Add Show",
     "ADD_PRIME": "Add Prime Membership Offers",
     "MY_FAV_SHOWS": "Favourite",
-    "MY_WATCHED_SHOWS": "Watched"
+    "MY_WATCHED_SHOWS": "Watched",
+    "ADMIN_OPTIONS": "More"
   },
   "LOGIN": {
     "HEADER": "LOG-IN",

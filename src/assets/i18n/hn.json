@@ -33,7 +33,8 @@
     "ADD_SHOW": "शो जोड़ें",
     "ADD_PRIME": "प्राइम मेंबरशिप ऑफर जोड़ें",
     "MY_FAV_SHOWS": "पसंदीदा",
-    "MY_WATCHED_SHOWS": "देख चुके"
+    "MY_WATCHED_SHOWS": "देख चुके",
+    "ADMIN_OPTIONS": "और देखें"
   },
   "LOGIN": {
     "HEADER": "लॉग-इन",

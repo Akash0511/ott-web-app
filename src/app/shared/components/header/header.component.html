@@ -30,11 +30,16 @@
             <li class="nav-item active" *ngIf="isLoggedIn">
                 <a class="nav-link" [routerLink]="['/user/my-watched']">{{ 'HEADER.MY_WATCHED_SHOWS' | translate }} </a>
             </li>
-            <li class="nav-item active" *ngIf="isAdmin">
-                <a class="nav-link" [routerLink]="['/admin/add-show']">{{ 'HEADER.ADD_SHOW' | translate }} </a>
-            </li>
-            <li class="nav-item active" *ngIf="isAdmin">
-                <a class="nav-link" [routerLink]="['/admin/add-prime-offers']">{{ 'HEADER.ADD_PRIME' | translate }} </a>
+            <li class="nav-item dropdown" *ngIf="isAdmin">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ 'HEADER.ADMIN_OPTIONS' | translate }} </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <button class="dropdown-item" [routerLink]="['/admin/add-show']">
+                        {{ 'HEADER.ADD_SHOW' | translate }} </button>
+                    <button class="dropdown-item" [routerLink]="['/admin/add-prime-offers']">
+                        {{ 'HEADER.ADD_PRIME' | translate }} </button>
+                </div>
             </li>
         </ul>
         <app-search-shows (searchText)="searchTextHandler($event)"></app-search-shows>
