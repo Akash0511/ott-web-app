@@ -76,7 +76,7 @@ export class ShowsDetailPageComponent implements OnInit {
         this.markShowAsFavourite = response.isMarkedAsFavorite;
         this.markShowAsWatched = response.isMarkedAsWatched;
       }
-      this.isPrimeUser = this.authService.getUserPrime() !== undefined ? true : false;
+      this.isPrimeUser = this.authService.getUserPrime() !== null ? true : false;
     }
     if (this.show.isAvailableOnPrime && this.isPrimeUser) {
       this.showWatchButton = true;
