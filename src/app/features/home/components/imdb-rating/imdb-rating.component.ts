@@ -9,7 +9,7 @@ export class ImdbRatingComponent implements OnInit {
 
   @Input()
   imdbRating!: number;
-  
+
   constructor() { }
 
   ngOnInit(): void {

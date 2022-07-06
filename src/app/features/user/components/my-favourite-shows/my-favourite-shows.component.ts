@@ -11,7 +11,7 @@ import { FavouriteShowsService } from 'src/app/core/services/favourite-shows/fav
 })
 export class MyFavouriteShowsComponent implements OnInit {
 
-  myFavShows! : Show[];
+  myFavShows!: Show[];
 
   constructor(private readonly route: ActivatedRoute,
     private readonly authService: AuthService,
@@ -24,19 +24,19 @@ export class MyFavouriteShowsComponent implements OnInit {
     });
   }
 
-  removeShowFromMyFavList(showId: string): void{
-    this.favShowService.removeFavShow(this.authService.getUserId(), showId).subscribe(data =>{
+  removeShowFromMyFavList(showId: string): void {
+    this.favShowService.removeFavShow(this.authService.getUserId(), showId).subscribe(data => {
       this.getMyFavShows();
     });
   }
 
-  getMyFavShows(): void{
-    this.favShowService.getUserFavouriteShows(this.authService.getUserId()).subscribe(data =>{
+  getMyFavShows(): void {
+    this.favShowService.getUserFavouriteShows(this.authService.getUserId()).subscribe(data => {
       this.myFavShows = data;
     });
   }
 
-  viewShowDetailPage(showId: string): void{
-    this.router.navigateByUrl('/shows/'+ showId);
+  viewShowDetailPage(showId: string): void {
+    this.router.navigateByUrl('/shows/' + showId);
   }
 }

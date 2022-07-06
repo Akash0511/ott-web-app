@@ -9,18 +9,18 @@ import { Show } from 'src/app/core/interfaces/show.model';
 })
 export class MyWatchedShowsComponent implements OnInit {
 
-  myWatchedShowList! : Show[];
+  myWatchedShowList!: Show[];
 
   constructor(private readonly route: ActivatedRoute,
     private readonly router: Router) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe((data :  any)=>{
+    this.route.data.subscribe((data: any) => {
       this.myWatchedShowList = data.myWatchedShowsList;
     });
   }
 
-  viewShowDetailPage(showId: string): void{
-    this.router.navigateByUrl('/shows/'+ showId);
+  viewShowDetailPage(showId: string): void {
+    this.router.navigateByUrl('/shows/' + showId);
   }
 }

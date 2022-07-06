@@ -15,14 +15,14 @@ export class UserService {
     this.getAllUsers().subscribe(users => {
       this.userList.next(users as User[]);
     })
-   }
+  }
 
   public getAllUsers(): Observable<User[]> {
     const url = `${this.USER_SERVICE_BASE_URL}/user.json`;
     return this.http.get<User[]>(url);
   }
 
-  public getUsers(): Observable<User[]>{
+  public getUsers(): Observable<User[]> {
     return this.userList.asObservable();
   }
 

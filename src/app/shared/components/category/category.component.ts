@@ -24,7 +24,7 @@ export class CategoryComponent implements OnInit {
   }
 
   onShowCategorySelected(language: string, selectedCategory: string): void {
-    this.showCategory.emit({language: language, category: selectedCategory});
+    this.showCategory.emit({ language: language, category: selectedCategory });
   }
 
 }

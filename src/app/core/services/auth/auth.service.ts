@@ -21,10 +21,10 @@ export class AuthService {
     this.saveUserName(userData.userName);
     this.saveUserRole(userData.role);
     this.saveUserId(userData.userId);
-    if(userData.isPrimeMember){
+    if (userData.isPrimeMember) {
       this.saveUserPrime();
     }
-    if(userData.role === 'admin'){
+    if (userData.role === 'admin') {
       this.validateAdminIdentitySubject.next(true);
     }
     this.validateUserIdentitySubject.next(true);

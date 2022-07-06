@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ReviewsComponent implements OnInit {
 
   @Input()
-  showReviews! : string[];
-  
+  showReviews!: string[];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -24,7 +24,7 @@ export class WriteReviewComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result !== ''){
+      if (result !== '') {
         this.showService.addShowReview(this.showId, result);
       }
     });

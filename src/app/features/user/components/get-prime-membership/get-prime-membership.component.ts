@@ -24,10 +24,10 @@ export class GetPrimeMembershipComponent implements OnInit {
     private readonly primeOfferService: PrimeOffersService) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe((data : any) => {
+    this.route.data.subscribe((data: any) => {
       this.primeOffers = data.primeOffersList;
     });
-    this.primeOfferService.getPrimeOffers().subscribe(data =>{
+    this.primeOfferService.getPrimeOffers().subscribe(data => {
       this.primeOffers = data;
     })
   }
